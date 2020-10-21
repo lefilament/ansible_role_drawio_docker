@@ -14,7 +14,7 @@
     dest: /home/docker/draw.io/PreConfig.js
     owner: root
     group: root
-    mode: 0444
+    mode: '0444'
 
 ## Install drawio docker
 - name: Install drawio docker
@@ -23,7 +23,7 @@
     dest: /home/docker/draw.io/docker-compose.yaml
     owner: root
     group: root
-    mode: 0400
+    mode: '0400'
   notify: 
     - start drawio docker
 

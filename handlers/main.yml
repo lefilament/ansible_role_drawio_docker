@@ -1,7 +1,7 @@
 ---
 
 - name: start drawio docker
-  docker_service:
+  docker_compose:
     project_src: /home/docker/draw.io
   async: 120
   poll: 10
