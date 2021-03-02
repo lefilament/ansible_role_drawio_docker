@@ -21,7 +21,7 @@ ansible_port:
 
 
 ## Draw.io configuration
-# Draw.io URL
+# Draw.io URL (only sub.domain without https:// in front)
 drawio_url:
 
 ```
