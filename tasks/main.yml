@@ -1,6 +1,6 @@
 ---
 
-- name: create Draw.io docker structure on server in /home/docker/tuleap
+- name: create Draw.io docker structure on server in /home/docker/draw.io
   file:
     name: /home/docker/draw.io
     state: directory
