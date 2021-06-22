@@ -2,7 +2,7 @@ docker_drawio
 =============
 
 This role allows you to deploy Diagrams.net (ex Draw.io) docker based on [jgraph Draw.io docker image](https://hub.docker.com/r/jgraph/drawio) and [jgraph Draw.io export server docker image](https://hub.docker.com/r/jgraph/export-server).
-The main repo for this role is on [Le Filament GitLab](https://sources.le-filament.com/lefilament/ansible-roles/docker_server.git)
+The main repo for this role is on [Le Filament GitLab](https://sources.le-filament.com/lefilament/ansible-roles/docker_drawio.git)
 
 Requirements
 ------------
