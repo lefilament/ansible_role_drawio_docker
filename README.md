@@ -1,40 +1,44 @@
-# Ansible role to deploy Draw.io server docker
+docker_drawio
+=============
 
-[![](https://img.shields.io/badge/licence-AGPL--3-blue.svg)](http://www.gnu.org/licenses/agpl "License: AGPL-3")
+This role allows you to deploy Diagrams.net (ex Draw.io) docker based on [jgraph Draw.io docker image](https://hub.docker.com/r/jgraph/drawio) and [jgraph Draw.io export server docker image](https://hub.docker.com/r/jgraph/export-server).
+The main repo for this role is on [Le Filament GitLab](https://sources.le-filament.com/lefilament/ansible-roles/docker_server.git)
 
-This role allows you to deploy PrivateBin docker based on [jgraph Draw.io docker image](https://hub.docker.com/r/jgraph/drawio) and [jgraph Draw.io export server docker image](https://hub.docker.com/r/jgraph/export-server).
+Requirements
+------------
 
-Prior to running this role, you would need to have docker installed on your server and a traefik proxy (which is the purpose of [this role](https://github.com/lefilament/ansible_role_docker_server))
+None.
 
-In order to use this role, you would need to define the following variables for your server (in hostvars for instance) - Only the names of the variables are provided below (not the values) for these used by this role to properly configure everything, you may copy this file directly in hostvars and set the variable although we could only encourage you to use an Ansible vault and refer vault variables from there:
+Role Variables
+--------------
 
-```json
-## Ansible configuration for connecting to remote host
-# IP address of server
-ansible_host: 
-# User to be used on server (to which Ansible server public key has been provided)
-ansible_user: 
-# Encryped password (for elevating rights / sudo)
-ansible_become_pass: 
-# Server SSHD port
-ansible_port: 
+Only one variable needed for this role:
+* drawio_url: URL to access Draw.io
 
+Dependencies
+------------
 
-## Draw.io configuration
-# Draw.io URL (only sub.domain without https:// in front)
-drawio_url:
+This role requires the following Ansible collection :
+* community.docker
 
-```
+This Docker role supposes that Traefik is deployed as an inverseproxy in front of the deployed Dockers.
+The following role is used by Le Filament for deploying Traefik : docker_server (https://sources.le-filament.com/lefilament/ansible-roles/docker_server)
 
-# Credits
+Example Playbook
+----------------
 
-## Contributors
+Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-* Remi Cazenave <remi-filament>
+    - hosts: servers
+      roles:
+         - { role: docker_drawio, drawio_url: "drawio.example.org" }
 
+License
+-------
 
-## Maintainer
+AGPL-3
 
-[![](https://le-filament.com/img/logo-lefilament.png)](https://le-filament.com "Le Filament")
+Author Information
+------------------
 
-This role is maintained by Le Filament
+Le Filament (https://le-filament.com)

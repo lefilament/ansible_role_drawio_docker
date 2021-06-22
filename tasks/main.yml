@@ -6,6 +6,7 @@
     state: directory
     owner: root
     group: root
+    mode: '0755'
 
 ## Copy preconfig.js script
 - name: copy PreConfig.js file
@@ -24,6 +25,5 @@
     owner: root
     group: root
     mode: '0400'
-  notify: 
+  notify:
     - start drawio docker
-
