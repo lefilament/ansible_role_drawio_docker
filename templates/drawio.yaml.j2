@@ -17,8 +17,6 @@ services:
     depends_on:
       - image-export
     restart: unless-stopped
-    volumes:
-      - ./PreConfig.js:/usr/local/tomcat/webapps/draw/js/PreConfig.js:ro
     environment:
       - EXPORT_URL=http://image-export:8000/
     labels:

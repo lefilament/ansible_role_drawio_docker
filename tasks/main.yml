@@ -1,27 +1,10 @@
 ---
 
-- name: create Draw.io docker structure on server in /home/docker/draw.io
-  file:
-    name: /home/docker/draw.io
-    state: directory
-    owner: root
-    group: root
-    mode: '0755'
-
-## Copy preconfig.js script
-- name: copy PreConfig.js file
-  copy:
-    src: PreConfig.js
-    dest: /home/docker/draw.io/PreConfig.js
-    owner: root
-    group: root
-    mode: '0444'
-
 ## Install drawio docker
 - name: Install drawio docker
   template:
     src: drawio.yaml.j2
-    dest: /home/docker/draw.io/docker-compose.yaml
+    dest: /home/docker/draw.io.yaml
     owner: root
     group: root
     mode: '0400'
