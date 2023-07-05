@@ -1,10 +1,10 @@
 ---
 
-- name: start drawio docker
-  docker_compose:
-    project_src: /home/docker/
-    files: draw.io.yaml
-    project_name: draw.io
+- name: Start drawio docker
+  community.docker.docker_compose:
+      project_src: /home/docker/
+      files: draw.io.yaml
+      project_name: draw.io
   async: 120
   poll: 10
   when: not ansible_check_mode

@@ -2,11 +2,11 @@
 
 ## Install drawio docker
 - name: Install drawio docker
-  template:
-    src: drawio.yaml.j2
-    dest: /home/docker/draw.io.yaml
-    owner: root
-    group: root
-    mode: '0400'
+  ansible.builtin.template:
+      src: drawio.yaml.j2
+      dest: /home/docker/draw.io.yaml
+      owner: root
+      group: root
+      mode: '0400'
   notify:
-    - start drawio docker
+      - Start drawio docker
